@@ -1,0 +1,92 @@
+.diamond-dashboard {
+    background: #060922;
+
+    .intro {
+        padding: 40px 0px;
+        background: #060922;
+        overflow: hidden;
+        position: relative;
+        min-height: 600px;
+
+        .banner-img {
+            opacity: 0.2;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        &-title {
+            position: relative;
+
+            span {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .service {
+        padding: 40px 0px;
+        min-height: 200px;
+        overflow: hidden;
+        box-sizing: border-box;
+        &-title {
+        }
+
+        &-group {
+            .list-collapse {
+                .collabse-button {
+                    background: #062241;
+                    border-radius: 4px;
+                    padding: 16px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #09aff4;
+                    }
+
+                    .icon {
+                        i {
+                            font-size: 16px;
+                            color: #09abef;
+                        }
+                    }
+                }
+
+                .collabse-button:hover > .icon > i {
+                    color: #fff;
+                }
+
+                .data-collapse {
+                    margin-top: 20px;
+                    background: #062241;
+                    border-radius: 4px;
+                    padding: 16px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    &:hover{
+                       box-shadow:  8px 8px 8px -5px #09abef;
+                    }
+                }
+            }
+        }
+    }
+    .infor{
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 40px 0px;
+        min-height: 200px;
+        &-group{
+            .infor-item{
+                display: flex;
+                align-items: flex-start;
+
+                .icon{
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}

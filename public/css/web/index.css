@@ -1,0 +1,180 @@
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+span, li, ul, div, a, p {
+  font-size: 14px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-desktop {
+  font-size: 14px;
+}
+@media (max-width: 991px) {
+  .text-desktop {
+    font-size: 12px;
+  }
+}
+
+.title-desktop {
+  font-size: 16px;
+  font-weight: 600;
+}
+@media (max-width: 991px) {
+  .title-desktop {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.text-bolder {
+  font-weight: 700;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-pri {
+  color: #09aff4;
+}
+
+.color-dark {
+  color: #868b9f;
+}
+
+.cover-images img {
+  display: block;
+  max-width: 100%;
+}
+
+.flex-jt-al-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-jt-al-cen-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.color-pri-light {
+  color: #09abef;
+}
+
+.big-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+@media (max-width: 991px) {
+  .big-title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+@media (max-width: 767px) {
+  .big-title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.diamond-dashboard {
+  background: #060922;
+}
+.diamond-dashboard .intro {
+  padding: 40px 0px;
+  background: #060922;
+  overflow: hidden;
+  position: relative;
+  min-height: 600px;
+}
+.diamond-dashboard .intro .banner-img {
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+.diamond-dashboard .intro-title {
+  position: relative;
+}
+.diamond-dashboard .intro-title span {
+  font-size: 24px;
+}
+.diamond-dashboard .service {
+  padding: 40px 0px;
+  min-height: 200px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.diamond-dashboard .service-group .list-collapse .collabse-button {
+  background: #062241;
+  border-radius: 4px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.diamond-dashboard .service-group .list-collapse .collabse-button:hover {
+  background: #09aff4;
+}
+.diamond-dashboard .service-group .list-collapse .collabse-button .icon i {
+  font-size: 16px;
+  color: #09abef;
+}
+.diamond-dashboard .service-group .list-collapse .collabse-button:hover > .icon > i {
+  color: #fff;
+}
+.diamond-dashboard .service-group .list-collapse .data-collapse {
+  margin-top: 20px;
+  background: #062241;
+  border-radius: 4px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.diamond-dashboard .service-group .list-collapse .data-collapse:hover {
+  box-shadow: 8px 8px 8px -5px #09abef;
+}
+.diamond-dashboard .infor {
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 40px 0px;
+  min-height: 200px;
+}
+.diamond-dashboard .infor-group .infor-item {
+  display: flex;
+  align-items: flex-start;
+}
+.diamond-dashboard .infor-group .infor-item .icon {
+  padding-right: 10px;
+}
