@@ -109,9 +109,22 @@ class OrderController extends Controller
         return response()->json(['message' => 'Order deleted successfully']);
     }
 
-    public function loadList()
+    public function loadList(Request $request)
     {
         $order = new Order();
-        return response()->json($order->loadList());
+        $page = $request->input('page', 1);
+        $limit = $request->input('limit', 10);
+        $offset = ($page - 1) * $limit;
+        $orders = $order->loadList($offset, $limit);
+        $total = $order->count();
+        return response()->json([
+            'data' => $orders,
+            'meta' => [
+                'total' => $total,
+                'page' => $page,
+                'limit' => $limit,
+                'last_page' => ceil($total / $limit)
+            ]
+        ]);
     }
 }
