@@ -178,3 +178,171 @@ a {
 .diamond-dashboard .infor-group .infor-item .icon {
   padding-right: 10px;
 }
+.diamond-dashboard .guide {
+  padding: 40px 0px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.diamond-dashboard .guide-group .mini-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 16px;
+}
+.diamond-dashboard .guide-group .mini-title .icon {
+  border-radius: 50%;
+  color: #fff;
+  background: #09aff4;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.diamond-dashboard .guide-group .mini-title .icon .num {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.diamond-dashboard .guide-group .mini-title .text {
+  padding-left: 10px;
+}
+.diamond-dashboard .guide-group .step-guide .guide-item {
+  padding-top: 6px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.diamond-dashboard .guide-group .step-guide .guide-item .icon {
+  padding-right: 10px;
+}
+.diamond-dashboard .guide-group .step-guide .guide-step2 {
+  padding-top: 20px;
+}
+.diamond-dashboard .guide-group .step-guide .guide-step2-item {
+  padding: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: #062241;
+  border-radius: 4px;
+}
+.diamond-dashboard .guide-group .step-guide .guide-step2-item .contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10px;
+}
+.diamond-dashboard .guide-group .step-guide .guide-step2-item .contact .text {
+  padding-left: 10px;
+}
+.diamond-dashboard .guide-group .step-guide .guide-step2 .group-text {
+  padding-top: 10px;
+}
+.diamond-dashboard .guide-group .step-guide .guide-step2 .group-text-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.diamond-dashboard .guide-group .step-guide .guide-step2 .group-text-item .icon {
+  padding-right: 10px;
+}
+.diamond-dashboard .support {
+  padding: 40px 0px;
+}
+.diamond-dashboard .support-group .support-item {
+  padding: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: #062241;
+  border-radius: 6px;
+}
+.diamond-dashboard .support-group .support-item-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #09abef;
+}
+.diamond-dashboard .support-group .support-item-title .text {
+  padding-left: 10px;
+}
+.diamond-dashboard .support-group .support-item .qr-item {
+  padding-top: 10px;
+}
+.diamond-dashboard .support-group .support-item .qr-item img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+.diamond-dashboard .support-group .support-item-nodata {
+  background: unset;
+}
+.diamond-dashboard .request {
+  padding: 40px 0px;
+  overflow: hidden;
+}
+.diamond-dashboard .request .form-send-request {
+  padding: 20px 20px 40px 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: #062241;
+}
+.diamond-dashboard .request .form-send-request .form-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  transition: all 0.3s ease;
+}
+.diamond-dashboard .request .form-send-request .form-item label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 6px;
+}
+.diamond-dashboard .request .form-send-request .form-item input {
+  padding: 10px;
+  border-radius: 6px;
+  background: transparent;
+  outline: none;
+  border: 1px solid #ccc;
+  color: #fff;
+}
+.diamond-dashboard .request .form-send-request .form-item input:focus {
+  border-color: #09abef;
+}
+.diamond-dashboard .request .form-send-request .form-item select {
+  padding: 10px;
+  border-radius: 6px;
+  background: transparent;
+  outline: none;
+  border: 1px solid #ccc;
+  color: #fff;
+}
+.diamond-dashboard .request .form-send-request .form-item select:focus {
+  border-color: #09abef;
+}
+.diamond-dashboard .request .form-send-request .form-item select option {
+  color: #000;
+}
+.diamond-dashboard .request .form-send-request .send-request {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.diamond-dashboard .request .form-send-request .send-request .button-send-request {
+  font-size: 14px;
+  color: #fff;
+  background: #09abef;
+  border-radius: 6px;
+  padding: 6px 32px;
+  border: 2px solid #09abef;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+.diamond-dashboard .request .form-send-request .send-request .button-send-request:hover {
+  border: 2px solid #fff;
+  background: unset;
+  box-shadow: 8px 8px 8px -5px #09abef;
+}

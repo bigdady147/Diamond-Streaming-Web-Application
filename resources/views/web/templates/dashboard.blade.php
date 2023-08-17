@@ -165,13 +165,306 @@
                 </div>
             </div>
         </div>
+        <div class="guide">
+            <div class="container">
+                <div class="guide-title">
+                    <h2 class="big-title text-white">HƯỚNG DẪN</h2>
+                    <p class="text-desktop color-dark">Quy trình nạp kim cương giá rẻ</p>
+                </div>
+                <div class="guide-group">
+                    <div class="mini-title ">
+                        <div class="icon">
+                            <div class="num">I</div>
+                        </div>
+                        <span class="text text-white title-desktop fw-600">Quy trình nạp kim cương giá rẻ</span>
+                    </div>
+                    <div class="step-guide">
+                        <div class="guide-item">
+                            <div class="icon">
+                                <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                            </div>
+                            <div class="text-desktop text-white ">
+                                <span class="color-pri-light text-desktop text-bolder">Bước 1:</span> <span
+                                    class="text-white text-desktop">Khách hàng gửi yêu cầu nạp vui lòng cung cấp thông tin nick Nimo TV muốn nhận Kim Cương và gói muốn nạp</span>
+                            </div>
+                        </div>
+                        <div class="guide-item">
+                            <div class="icon">
+                                <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                            </div>
+                            <div class="text-desktop text-white ">
+                                <span class="color-pri-light text-desktop text-bolder">Bước 2:</span> <span
+                                    class="text-white text-desktop">Sau khi gửi Yêu cầu, quý khách vui lòng nhắn tin cho Zalo hỗ trợ, gửi bill giao dịch chuyển khoản
+                                    (quý khách chuyển khoản qua tài khoản của line hỗ trợ nào thì nhắn qua số hỗ trợ đó)</span>
+                            </div>
+                        </div>
+                        <div class="guide-step2">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="guide-step2-item">
+                                        <div class="title color-pri-light text-bolder text-desktop">
+                                            HỖ TRỢ NẠP 1
+                                        </div>
+                                        <div class="contact">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-phone text-desktop color-pri-light"></i>
+                                            </span>
+                                            <span class="text-desktop text-white text">Phone & Zalo: 0848123437</span>
+                                        </div>
+                                        <div class="group-text">
+                                            <div class="group-text-item">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                                                </div>
+                                                <div class="text-desktop text-white">
+                                                    <span
+                                                        class="text-white text-desktop ">Nội dung chuyển khoản: </span>
+                                                    <span class="color-pri-light text-desktop"> [ID tài khoản nhận Kim Cương]. Ví dụ: 123456789</span>
+                                                </div>
+                                            </div>
+                                            <div class="group-text-item">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                                                </div>
+                                                <div class="text-desktop text-white">
+                                                    <span
+                                                        class="text-white text-desktop ">STK Ngân Hàng:  </span>
+                                                    <span class="color-pri-light text-desktop"> 7888855555</span>
+                                                </div>
+                                            </div>
+                                            <div class="group-text-item">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                                                </div>
+                                                <div class="text-desktop text-white">
+                                                    <span
+                                                        class="text-white text-desktop ">Chủ Tài Khoản: </span>
+                                                    <span
+                                                        class="color-pri-light text-desktop"> Lương Thị Bích Ngọc</span>
+                                                </div>
+                                            </div>
+                                            <div class="group-text-item">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                                                </div>
+                                                <div class="text-desktop text-white">
+                                                    <span
+                                                        class="text-white text-desktop ">Ngân Hàng: </span>
+                                                    <span class="color-pri-light text-desktop">Quân Đội MB Bank</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="guide-step2-item">
+                                        <div class="title color-pri-light text-bolder text-desktop">
+                                            HỖ TRỢ NẠP 2
+                                        </div>
+                                        <div class="contact">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-phone text-desktop color-pri-light"></i>
+                                            </span>
+                                            <span class="text-desktop text-white text">Phone & Zalo: 0848123437</span>
+                                        </div>
+                                        <div class="group-text">
+                                            <div class="group-text-item">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                                                </div>
+                                                <div class="text-desktop text-white">
+                                                    <span
+                                                        class="text-white text-desktop ">Nội dung chuyển khoản: </span>
+                                                    <span class="color-pri-light text-desktop"> [ID tài khoản nhận Kim Cương]. Ví dụ: 123456789</span>
+                                                </div>
+                                            </div>
+                                            <div class="group-text-item">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                                                </div>
+                                                <div class="text-desktop text-white">
+                                                    <span
+                                                        class="text-white text-desktop ">STK Ngân Hàng:  </span>
+                                                    <span class="color-pri-light text-desktop"> 7888855555</span>
+                                                </div>
+                                            </div>
+                                            <div class="group-text-item">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                                                </div>
+                                                <div class="text-desktop text-white">
+                                                    <span
+                                                        class="text-white text-desktop ">Chủ Tài Khoản: </span>
+                                                    <span
+                                                        class="color-pri-light text-desktop"> Lương Thị Bích Ngọc</span>
+                                                </div>
+                                            </div>
+                                            <div class="group-text-item">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                                                </div>
+                                                <div class="text-desktop text-white">
+                                                    <span
+                                                        class="text-white text-desktop ">Ngân Hàng: </span>
+                                                    <span class="color-pri-light text-desktop">Quân Đội MB Bank</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guide-item pt-3">
+                            <div class="icon">
+                                <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                            </div>
+                            <div class="text-desktop text-white ">
+                                <span class="color-pri-light text-desktop text-bolder">Bước 3:</span> <span
+                                    class="text-white text-desktop"> Quý khách vui lòng chờ phản hồi và đợi Kim Cương về tài khoản</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini-title pt-5">
+                        <div class="icon">
+                            <div class="num">II</div>
+                        </div>
+                        <span class="text text-white title-desktop fw-600">Lưu ý khi nạp Kim cương Nimo TV giá rẻ</span>
+                    </div>
+                    <div class="step-guide">
+                        <div class="guide-item">
+                            <div class="icon">
+                                <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                            </div>
+                            <div class="text-desktop text-white ">
+                                <span class="text-white text-desktop text-bolder">Quý khách nên chọn nạp gói cao để được
+                                    nhận được  <strong class="color-pri-light">mức giảm giá Kim Cương tốt nhất,</strong>  chi tiết các mức giá nạp quý khách xem ở bảng nạp. </span>
+                            </div>
+                        </div>
+                        <div class="guide-item">
+                            <div class="icon">
+                                <i class="fa-solid fa-diamond text-desktop color-pri-light"></i>
+                            </div>
+                            <div class="text-desktop text-white ">
+                                <span class="color-white text-desktop text-bolder">Quý khách có nhu cầu nạp từ <strong
+                                        class="color-pri-light">100 triệu</strong>  trở lên vui lòng
+                                    Inbox hỗ trợ viên để nhận được mức chiết khấu tốt nhất.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="support">
+            <div class="container">
+                <div class="support-title">
+                    <h2 class="big-title text-white">LIÊN HỆ VÀ HỖ TRỢ</h2>
+                    <p class="text-desktop color-dark">Mọi vướng mắc trong quá trình nạp cũng như yêu cầu hỗ trợ vui
+                        lòng liên hệ Zalo</p>
+                </div>
+                <div class="support-group">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="support-item">
+                                <div class="support-item-title">
+                                       <span class="icon">
+                                          <i class="fa-solid fa-phone text-desktop color-pri-light"></i>
+                                       </span>
+                                    <span class="text-desktop text-white text ">Hỗ trợ 1 Phone & Zalo: <strong
+                                            class="color-pri-light">0848123437</strong>  </span>
+                                </div>
+                                <div class="qr-item">
+                                    <img src="{{ asset('images/contact/qr1.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="support-item support-item-nodata">
+                                <div class="qr-item">
+                                    <img
+                                        src="https://amincodes.com/html/one-pages/flex-it/assets/images/faq/faq-illustration.png"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="support-item">
+                                <div class="support-item-title">
+                                       <span class="icon">
+                                          <i class="fa-solid fa-phone text-desktop color-pri-light"></i>
+                                       </span>
+                                    <span class="text-desktop text-white text ">Hỗ trợ 2 Phone & Zalo: <strong
+                                            class="color-pri-light">0848123437</strong>  </span>
+                                </div>
+                                <div class="qr-item">
+                                    <img src="{{ asset('images/contact/qr1.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="request">
+            <div class="container">
+                <div class="request-title">
+                    <h2 class="big-title text-white">Gửi yêu cầu nạp Kim Cương</h2>
+                    <p class="text-desktop color-dark">Mọi vướng mắc trong quá trình nạp cũng như yêu cầu hỗ trợ vui
+                        lòng liên hệ Zalo tại 2 số bên trên</p>
+                </div>
+                <div class="form-send-request">
+                    <div class="form-data">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-item">
+                                    <label id="label_id_nimo" for="id_nimo">ID Nimo:</label>
+                                    <input v-model="item_edit.id_app" placeholder="ID" name="id_nimo" id="id_nimo" type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-item">
+                                    <label for="nickname">Nickname:</label>
+                                    <input v-model="item_edit.nickname" placeholder="Nickname" name="nickname" id="nickname" type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-item">
+                                    <label for="phone">Số điện thoại:</label>
+                                    <input v-model="item_edit.phone" placeholder="Số điện thoại" name="phone" id="phone" type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-item">
+                                    <label for="lang-select">Zalo hỗ trợ</label>
+                                    <select v-model="item_edit.user_ids" name="lang" id="lang-select">
+                                        <option class="default" value="">Hãy chọn một ngôn ngữ lập trình</option>
+                                        <option :value="csharp">C#</option>
+                                        <option :value="cpp">C++</option>
+                                        <option :value="php">PHP</option>
+                                        <option :value="ruby">Ruby</option>
+                                        <option :value="js">Javascript</option>
+                                        <option :value="dart">Dart</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="send-request">
+                                    <button @click="save" class="button-send-request">GỬI YÊU CẦU</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="application/javascript">
         document.addEventListener('DOMContentLoaded', () => {
             let app = new Vue({
                 el: '#app',
-                data: {},
+                data: {
+                    item_edit: { }
+                },
                 created() {
                     let vm = this;
                 },
@@ -179,7 +472,20 @@
                     let vm = this;
 
                 },
-                methods: {}
+                methods: {
+                    save() {
+                        let vm = this;
+                        const headers = {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                        };
+                        axios.post(`api/orders`, vm.item_edit).then(response => {
+                            console.log('done', response.message);
+
+                        }).catch(e => {
+                                // this.errors.push(e)
+                        })
+                    }
+                }
             })
         })
     </script>
