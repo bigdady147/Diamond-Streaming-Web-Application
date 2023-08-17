@@ -36,10 +36,10 @@ Route::get('/supporters', [SupporterController::class, 'loadList']);
 
 
 //FOUNDATIONS API
-Route::post('/foundations', [SupporterController::class, 'create']);
-Route::put('/foundations/{id}', [SupporterController::class, 'update']);
-Route::delete('/foundations/{id}', [SupporterController::class, 'delete']);
-Route::get('/foundations', [SupporterController::class, 'loadList']);
+Route::post('/foundations', [FoundationController::class, 'create']);
+Route::put('/foundations/{id}', [FoundationController::class, 'update']);
+Route::delete('/foundations/{id}', [FoundationController::class, 'delete']);
+Route::get('/foundations', [FoundationController::class, 'loadList']);
 
 
 //PACKAGES API
