@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [\App\Http\Controllers\WebController::class, 'getDashboard'])->name('dashboard');
+Route::get('/admin', [\App\Http\Controllers\WebController::class, 'getAdminDashboard'])->name('admin');
 

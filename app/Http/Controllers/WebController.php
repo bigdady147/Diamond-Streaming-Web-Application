@@ -24,5 +24,8 @@ class WebController extends Controller
     public function getDashboard(){
         return View('web.templates.dashboard');
     }
-
+    //GET DASHBOARD ADMIN
+    public function getAdminDashboard(){
+        return View('admin._layouts.master-v1');
+    }
 }
