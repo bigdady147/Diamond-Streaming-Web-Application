@@ -15,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [\App\Http\Controllers\WebController::class, 'getDashboard'])->name('dashboard');
+
+
+//admin
 Route::get('/admin', [\App\Http\Controllers\WebController::class, 'getAdminDashboard'])->name('admin');
+Route::get('/admin/list-supporters', [\App\Http\Controllers\WebController::class, 'getListSupporter'])->name('admin-list-supporters');
 

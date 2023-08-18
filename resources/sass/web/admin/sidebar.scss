@@ -1,0 +1,17 @@
+.group-sidebar{
+    .nav-item{
+        .nav-link{
+            color: #fff;
+        }
+    }
+    .nav-link{
+        color: #fff;
+        transition: all 0.3s ease;
+        &:hover{
+            color: #09abef;
+        }
+    }
+    .nav-link-active{
+        color: #09abef;
+    }
+}

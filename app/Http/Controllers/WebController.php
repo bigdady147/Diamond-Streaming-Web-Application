@@ -28,4 +28,7 @@ class WebController extends Controller
     public function getAdminDashboard(){
         return View('admin._layouts.master-v1');
     }
+    public function getListSupporter(){
+        return View('admin.templates.list-supporters');
+    }
 }

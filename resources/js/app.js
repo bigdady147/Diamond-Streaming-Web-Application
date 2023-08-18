@@ -1,12 +1,21 @@
 require('./bootstrap');
 
 import Vue from "vue";
-window.Vue = Vue;
-import axios from "axios";
-import moment from "moment";
+import Breadcrumb from "./import_components"
 
-// register globally
+
 window._ = require("lodash");
 window.axios = require("axios");
 window.moment = require("moment");
+window.Vue = Vue;
+import axios from "axios";
+import moment from "moment";
+const app = new Vue({
+    el: '#app',
+    components: {
+        Breadcrumb // Khai báo component breadcrumb
+    }
+})
+// register globally
+
 
