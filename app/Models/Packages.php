@@ -10,7 +10,7 @@ class Packages extends Model
     use HasFactory;
     protected $table = 'packages';
 
-    protected $fillable = ['full_name', 'status', 'price', 'count', 'foundations_id'];
+    protected $fillable = ['full_name', 'status', 'price', 'count', 'foundation_id'];
 
     public function createPackages($data)
     {

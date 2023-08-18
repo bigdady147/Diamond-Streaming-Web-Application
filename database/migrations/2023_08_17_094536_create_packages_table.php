@@ -19,8 +19,8 @@ class CreatePackagesTable extends Migration
             $table->string('status');
             $table->double('price');
             $table->integer('count');
-            $table->unsignedBigInteger('foundations_id');
-            $table->foreign('foundations_id')->references('id')->on('foundations');
+            $table->string('foundation_id');
+//            $table->foreign('foundation_id')->references('id')->on('foundations')->onDelete('cascade');
             $table->timestamps();
         });
     }
