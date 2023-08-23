@@ -1,21 +1,14 @@
-require('./bootstrap');
+import Vue from 'vue';
+import Breadcrumb from './import_components';
+import axios from 'axios';
+import moment from 'moment';
+import DateRangePicker from 'vue2-daterange-picker';
+import 'vue2-daterange-picker/dist/vue2-daterange-picker.css';
 
-import Vue from "vue";
-import Breadcrumb from "./import_components"
+window._ = require('lodash');
 
+Vue.component('date-range-picker', DateRangePicker);
 
-window._ = require("lodash");
-window.axios = require("axios");
-window.moment = require("moment");
 window.Vue = Vue;
-import axios from "axios";
-import moment from "moment";
-const app = new Vue({
-    el: '#app',
-    components: {
-        Breadcrumb // Khai báo component breadcrumb
-    }
-})
-// register globally
-
-
+window.axios = axios;
+window.moment = moment;

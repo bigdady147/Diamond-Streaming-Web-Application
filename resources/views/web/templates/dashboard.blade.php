@@ -475,9 +475,9 @@
                 methods: {
                     save() {
                         let vm = this;
-                        const headers = {
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
-                        };
+                        // const headers = {
+                        //     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                        // };
                         axios.post(`api/orders`, vm.item_edit).then(response => {
                             console.log('done', response.message);
 

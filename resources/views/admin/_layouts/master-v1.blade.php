@@ -50,6 +50,7 @@
 <script type="text/javascript" src="{{ asset('slick/slick/slick.min.js') }}"></script>
 <script src="https://unpkg.com/vue@2"></script>
 <script src="https://unpkg.com/jquery@3.1.1/dist/jquery.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
 
 
 </body>

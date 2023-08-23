@@ -360,3 +360,87 @@ a {
   background: unset;
   box-shadow: 8px 8px 8px -5px #09abef;
 }
+
+.admin-dashboard .text-admin {
+  font-size: 12px;
+}
+.admin-dashboard .admin-block-img {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.admin-dashboard .admin-block-img img {
+  display: block;
+  align-items: center;
+  max-width: 100%;
+}
+.admin-dashboard .table-data {
+  padding-top: 20px;
+}
+.admin-dashboard .table-data table {
+  border: 1px solid #6c757d;
+  border-radius: 2px;
+  width: 100%;
+}
+.admin-dashboard .table-data table thead {
+  background: #6c757d;
+}
+.admin-dashboard .table-data table thead tr th {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  padding: 4px 10px;
+  text-align: center;
+}
+.admin-dashboard .table-data table tbody tr td {
+  font-size: 10px;
+  font-weight: 500;
+  color: #000;
+  padding: 4px 10px;
+  text-align: center;
+}
+.admin-dashboard .table-data table tbody tr td .text-admin {
+  font-size: 10px;
+  padding: 4px 8px;
+}
+.admin-dashboard .list-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+.admin-dashboard .list-action .btn-action {
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  padding: 4px 12px;
+}
+.admin-dashboard .list-action .btn-action .dropdown-item {
+  font-size: 10px;
+}
+.admin-dashboard .modal .modal-dialog {
+  max-width: 60%;
+}
+.admin-dashboard .modal .form-input {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding-top: 10px;
+}
+.admin-dashboard .modal .form-input label {
+  font-size: 10px;
+  font-weight: 600;
+}
+.admin-dashboard .modal .form-input input {
+  color: #000;
+  border-radius: 2px;
+  font-size: 10px;
+  border: 1px solid #ccc;
+  padding: 4px;
+}
+.admin-dashboard .modal .form-input input:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}

@@ -15,12 +15,12 @@ class CreateSupportersTable extends Migration
     {
         Schema::create('supporters', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name');
-            $table->string('phone');
-            $table->timestamp('date_of_birth');
-            $table->string('email');
-            $table->string('status');
-            $table->binary('zalo_qr');
+            $table->string('full_name')->nullable()->default('');
+            $table->string('phone')->default('');
+            $table->timestamp('date_of_birth')->nullable()->default(null); // Thay đổi giá trị mặc định của trường date_of_birth
+            $table->string('email')->default('');
+            $table->string('status')->default('inactive');
+            $table->binary('zalo_qr')->default('');
             $table->timestamps();
         });
     }

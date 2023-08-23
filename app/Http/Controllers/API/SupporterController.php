@@ -11,22 +11,62 @@ class SupporterController extends Controller
     //
     public function create(Request $request)
     {
+        if ($request->has('zalo_qr')) {
+            $imageData = $request->input('zalo_qr');
+            $imageData = str_replace('data:image/jpeg;base64,', '', $imageData);
+            $imageData = str_replace(' ', '+', $imageData);
+            $imageName = uniqid() . '.jpg';
+            $imagePath = public_path('supporters/' . $imageName);
+            $imageData = base64_decode($imageData);
+            file_put_contents($imagePath, $imageData);
+        } else {
+            return response()->json(['message' => 'Error No Images Upload']);
+        }
         $supporter = new Supporter();
-        $supporter->createOrder($request->all());
-        return response()->json(['message' => 'Order created successfully']);
+        $supporter->full_name = $request->input('full_name');
+        $supporter->phone = $request->input('phone'); // Lấy tgiá trị của phone từ request
+        $supporter->date_of_birth = $request->input('date_of_birth'); // Lấy giá trị của date_of_birth từ request
+        $supporter->email = $request->input('email'); // Lấy giá trị của email từ request
+        $supporter->zalo_qr = '/supporters/' . $imageName;
+        $supporter->save();
+
+        return response()->json(['message' => 'Supporter created successfully']);
     }
 
     public function update(Request $request, $id)
     {
+        if ($request->has('zalo_qr')) {
+            $imageData = $request->input('zalo_qr');
+            $imageData = str_replace('data:image/jpeg;base64,', '', $imageData);
+            $imageData = str_replace(' ', '+', $imageData);
+            $imageName = uniqid() . '.jpg';
+            $imagePath = public_path('supporters/' . $imageName);
+            $imageData = base64_decode($imageData);
+            file_put_contents($imagePath, $imageData);
+        } else {
+            return response()->json(['message' => 'Error No Images Upload']);
+        }
         $supporter = new Supporter();
-        $supporter->updateOrder($id, $request->all());
+        $supporter->full_name = $request->input('full_name');
+        $supporter->phone = $request->input('phone'); // Lấy tgiá trị của phone từ request
+        $supporter->date_of_birth = $request->input('date_of_birth'); // Lấy giá trị của date_of_birth từ request
+        $supporter->email = $request->input('email'); // Lấy giá trị của email từ request
+        $supporter->zalo_qr = '/supporters/' . $imageName;
+        $supporter->updateSupporter($id, $request->all());
         return response()->json(['message' => 'Order updated successfully']);
+    }
+    public function changeStatus($id, $newStatus)
+    {
+        $supporter = Supporter::find($id);
+        $supporter->status = 'active';
+        $supporter->save();
+        return response()->json(['message' => 'Supporter status changed successfully']);
     }
 
     public function delete($id)
     {
         $supporter = new Supporter();
-        $supporter->deleteOrder($id);
+        $supporter->deleteSupporter($id);
         return response()->json(['message' => 'Order deleted successfully']);
     }
 
