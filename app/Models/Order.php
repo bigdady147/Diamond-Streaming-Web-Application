@@ -11,8 +11,12 @@ class Order extends Model
     protected $fillable = [
         'nickname',
         'phone',
+        'packages_id',
+        'foundations_id',
+        'supporters_id',
+        'phone',
+        'status',
         'id_app',
-        'user_ids'
     ];
     public function createOrder($data)
     {
@@ -32,8 +36,21 @@ class Order extends Model
         $order->delete();
     }
 
-    public function loadList()
+    public function loadList($offset, $limit)
     {
-        return Order::all();
+        return $this->with('supporters','packages','foundations')->orderBy('created_at', 'desc')->offset($offset)->limit($limit)->get();
+
+    }
+    public function supporters()
+    {
+        return $this->belongsTo(Supporter::class);
+    }
+    public function packages()
+    {
+        return $this->belongsTo(Packages::class);
+    }
+    public function foundations()
+    {
+        return $this->belongsTo(Foundation::class);
     }
 }

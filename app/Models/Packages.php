@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Packages extends Model
 {
     use HasFactory;
-    protected $table = 'packages';
 
+
+
+    protected $table = 'packages';
     protected $fillable = ['full_name', 'status', 'price', 'count', 'foundation_id'];
 
     public function createPackages($data)
@@ -30,9 +32,9 @@ class Packages extends Model
         $package->delete();
     }
 
-    public function loadList()
+    public function loadList($offset, $limit)
     {
-        return Packages::with('foundation')->get();
+        return $this->with('foundation')->orderBy('created_at', 'desc')->offset($offset)->limit($limit)->get();
     }
 
     public function foundation()

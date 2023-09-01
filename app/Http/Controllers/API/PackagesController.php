@@ -16,7 +16,7 @@ class PackagesController extends Controller
             'status' => $request->input('status'),
             'price' => $request->input('price'),
             'count' => $request->input('count'),
-            'foundations_id' => $request->input('foundations_id')
+            'foundation_id' => $request->input('foundation_id')
         ]);
         $package->save();
 
@@ -33,7 +33,7 @@ class PackagesController extends Controller
         $package->status = $request->input('status');
         $package->price = $request->input('price');
         $package->count = $request->input('count');
-        $package->foundations_id = $request->input('foundations_id');
+        $package->foundation_id = $request->input('foundation_id');
         $package->save();
 
         return response()->json([
@@ -51,8 +51,25 @@ class PackagesController extends Controller
         ], 200);
     }
 
-    public function loadList()
+    public function loadList(Request $request)
     {
-        return Packages::with('foundation')->get();
+        $package = new Packages();
+        if(isset($this->request->filters['fields'])){
+            $res = $package->select($this->request->filters['fields']);
+        }
+        $page = $request->input('page', 1);
+        $limit = $request->input('limit', 10);
+        $offset = ($page - 1) * $limit;
+        $packages = $package->loadList($offset, $limit);
+        $total = $package->count();
+        return response()->json([
+            'data' => $packages,
+            'meta' => [
+                'total' => $total,
+                'page' => $page,
+                'limit' => $limit,
+                'last_page' => ceil($total / $limit)
+            ]
+        ]);
     }
 }

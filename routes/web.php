@@ -18,6 +18,11 @@ Route::get('/', [\App\Http\Controllers\WebController::class, 'getDashboard'])->n
 
 
 //admin
-Route::get('/admin', [\App\Http\Controllers\WebController::class, 'getAdminDashboard'])->name('admin');
-Route::get('/admin/list-supporters', [\App\Http\Controllers\WebController::class, 'getListSupporter'])->name('admin-list-supporters');
+
+
+    Route::get('/admin', [\App\Http\Controllers\WebController::class, 'getAdminDashboard'])->name('admin');
+    Route::get('/admin/list-supporters', [\App\Http\Controllers\WebController::class, 'getListSupporter'])->name('admin-list-supporters');
+    Route::get('/admin/list-foundations', [\App\Http\Controllers\WebController::class, 'getListFoundations'])->name("admin-list-foundations");
+    Route::get('/admin/list-packages', [\App\Http\Controllers\WebController::class, 'getListPackages'])->name("admin-list-packages");
+    Route::get('/admin/list-orders', [\App\Http\Controllers\WebController::class, 'getListOrders'])->name("admin-list-orders");
 

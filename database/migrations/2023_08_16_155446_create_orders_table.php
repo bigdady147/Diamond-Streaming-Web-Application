@@ -18,7 +18,10 @@ class CreateOrdersTable extends Migration
             $table->string('nickname')->nullable()->default('');
             $table->string('phone')->default('');
             $table->string('id_app')->default('');
-            $table->string('user_ids')->default('');
+            $table->string('packages_id')->default('');
+            $table->string('status')->default('pending');
+            $table->string('supporters_id')->default('');
+            $table->string('foundations_id')->default('');
             $table->timestamps();
         });
     }

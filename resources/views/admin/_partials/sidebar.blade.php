@@ -26,7 +26,18 @@
                 <a href="{{route('admin-list-supporters')}}" :class="url_link.includes('list-supporters') ? 'nav-link-active' : '' " class="nav-link px-0 align-middle">
                     <i class="fas fa-people-arrows"></i> <span class="ms-1 d-none d-sm-inline">Supporter</span></a>
             </li>
-
+            <li>
+                <a href="{{route('admin-list-foundations')}}" :class="url_link.includes('list-foundations') ? 'nav-link-active' : '' " class="nav-link px-0 align-middle">
+                    <i class="fas fa-people-arrows"></i> <span class="ms-1 d-none d-sm-inline">Foundations</span></a>
+            </li>
+            <li>
+                <a href="{{route('admin-list-packages')}}" :class="url_link.includes('list-packages') ? 'nav-link-active' : '' " class="nav-link px-0 align-middle">
+                    <i class="fas fa-people-arrows"></i> <span class="ms-1 d-none d-sm-inline">Packages</span></a>
+            </li>
+            <li>
+                <a href="{{route('admin-list-orders')}}" :class="url_link.includes('list-orders') ? 'nav-link-active' : '' " class="nav-link px-0 align-middle">
+                    <i class="fas fa-people-arrows"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+            </li>
         </ul>
         <hr>
         <div class="dropdown pb-4">

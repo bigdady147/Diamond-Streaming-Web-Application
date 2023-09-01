@@ -15,11 +15,11 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name');
-            $table->string('status');
-            $table->double('price');
-            $table->integer('count');
-            $table->string('foundation_id');
+            $table->string('full_name')->default('');
+            $table->string('status')->default('');
+            $table->double('price')->default(0);
+            $table->integer('count')->default(0);
+            $table->string('foundation_id')->default('');
 //            $table->foreign('foundation_id')->references('id')->on('foundations')->onDelete('cascade');
             $table->timestamps();
         });

@@ -363,7 +363,7 @@
                 </div>
                 <div class="support-group">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-md-4">
                             <div class="support-item">
                                 <div class="support-item-title">
                                        <span class="icon">
@@ -377,7 +377,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-md-4">
                             <div class="support-item support-item-nodata">
                                 <div class="qr-item">
                                     <img
@@ -386,7 +386,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-md-4">
                             <div class="support-item">
                                 <div class="support-item-title">
                                        <span class="icon">
@@ -435,17 +435,30 @@
                             <div class="col-lg-6">
                                 <div class="form-item">
                                     <label for="lang-select">Zalo hỗ trợ</label>
-                                    <select v-model="item_edit.user_ids" name="lang" id="lang-select">
-                                        <option class="default" value="">Hãy chọn một ngôn ngữ lập trình</option>
-                                        <option :value="csharp">C#</option>
-                                        <option :value="cpp">C++</option>
-                                        <option :value="php">PHP</option>
-                                        <option :value="ruby">Ruby</option>
-                                        <option :value="js">Javascript</option>
-                                        <option :value="dart">Dart</option>
+                                    <select v-model="item_edit.supporters_id" name="lang" id="lang-select">
+                                        <option style="padding: 6px 10px" v-for="(item,index) in list_supporters.data" v-text="item.phone" :value="item.id" class="default" value="">Hãy chọn Zalo hỗ trợ</option>
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="form-item">
+                                    <label for="lang-select">Chọn nền tảng</label>
+                                    <select v-model="item_edit.foundations_id" name="lang" id="lang-select">
+                                        <option hidden selected  value="" disabled >Hãy chọn nền tảng</option>
+                                        <option style="padding: 6px 10px" v-for="(item,index) in list_foundations.data" v-text="_.get(item,'full_name','')" :value="item.id" class="default" value="">Hãy chọn gói nạp</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-item">
+                                    <label for="lang-select">Chọn gói nạp</label>
+                                    <select v-model="item_edit.packages_id" name="lang" id="lang-select">
+                                        <option selected hidden value="" disabled >Hãy gói nạp</option>
+                                        <option style="padding: 6px 10px" v-for="(item,index) in list_packages.data" v-text="formartPackagesName(item.full_name, item.price, item.count)" :value="item.id" class="default" value="">Hãy chọn gói nạp</option>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="col-lg-12">
                                 <div class="send-request">
                                     <button @click="save" class="button-send-request">GỬI YÊU CẦU</button>
@@ -463,14 +476,25 @@
             let app = new Vue({
                 el: '#app',
                 data: {
-                    item_edit: { }
+                    item_edit: {
+                        foundations_id : '',
+                        packages_id : '',
+                    },
+                    list_supporters: [],
+                    list_packages: [],
+                    list_foundations: [],
+                    filters : {
+                        foundation_id : '',
+                    }
                 },
                 created() {
                     let vm = this;
                 },
                 mounted() {
                     let vm = this;
-
+                    vm.loadListSupporters();
+                    vm.loadListPackages();
+                    vm.loadListFoundations();
                 },
                 methods: {
                     save() {
@@ -484,8 +508,71 @@
                         }).catch(e => {
                                 // this.errors.push(e)
                         })
-                    }
-                }
+                    },
+                    loadListSupporters(){
+                      let vm = this;
+                        const headers = {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                        };
+                        axios.get(`/api/supporters`).then(response => {
+                            vm.list_supporters = response.data;
+
+                        }).catch(e => {
+                            // this.errors.push(e)
+                        })
+                    },
+                    formartPackagesName(name,price,count){
+                      let vm = this;
+                      return name + ': ' + price + ' VNĐ' + ' - ' + count + ' Kim cương';
+                    },
+                    loadListPackages(){
+                      let vm = this;
+                        const headers = {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                        };
+                        axios.get(`/api/packages`,{
+                            params: {
+                                filters: vm.filters.foundations_id
+                            }
+                        }).then(response => {
+                            vm.list_packages = response.data;
+
+                        }).catch(e => {
+                            // this.errors.push(e)
+                        })
+                    },
+                    loadListFoundations(){
+                        let vm = this;
+                        const headers = {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                        };
+                        axios.get(`/api/foundations`).then(response => {
+                            vm.list_foundations = response.data;
+                        }).catch(e => {
+                            // this.errors.push(e)
+                        })
+                    },
+                    requestPayment(){
+                        let vm = this;
+                        const headers = {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                        };
+                        axios.post(`/api/orders`, vm.item_edit).then(response => {
+                            console.log('done', response);
+
+                        }).catch(e => {
+                            this.errors.push(e)
+                        })
+                    },
+                },
+                watch: {
+                    'item_edit.foundations_id': function() {
+                        let vm = this;
+                        vm.filters.foundation_id = vm.item_edit.foundations_id;
+                        vm.loadListPackages();
+                    },
+
+                },
             })
         })
     </script>

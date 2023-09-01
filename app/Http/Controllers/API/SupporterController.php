@@ -12,12 +12,21 @@ class SupporterController extends Controller
     public function create(Request $request)
     {
         if ($request->has('zalo_qr')) {
+//            $imageData = $request->input('zalo_qr');
+//            $imageData = str_replace('data:image/jpeg;base64,', '', $imageData);
+//            $imageData = str_replace(' ', '+', $imageData);
+//            $imageName = uniqid() . '.jpg';
+//            $imagePath = public_path('supporters/' . $imageName);
+//            $imageData = base64_decode($imageData);
+////            dd($imageData);
+//            file_put_contents($imagePath, $imageData);
             $imageData = $request->input('zalo_qr');
-            $imageData = str_replace('data:image/jpeg;base64,', '', $imageData);
-            $imageData = str_replace(' ', '+', $imageData);
-            $imageName = uniqid() . '.jpg';
-            $imagePath = public_path('supporters/' . $imageName);
+            list($type, $imageData) = explode(';', $imageData);
+            list(, $imageData) = explode(',', $imageData);
             $imageData = base64_decode($imageData);
+            $extension = explode('/', $type)[1];
+            $imageName = uniqid() . '.' . $extension;
+            $imagePath = public_path('supporters/' . $imageName);
             file_put_contents($imagePath, $imageData);
         } else {
             return response()->json(['message' => 'Error No Images Upload']);

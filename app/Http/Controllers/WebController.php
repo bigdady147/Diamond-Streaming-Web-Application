@@ -31,4 +31,13 @@ class WebController extends Controller
     public function getListSupporter(){
         return View('admin.templates.list-supporters');
     }
+    public function getListFoundations(){
+        return View('admin.templates.list-foundations');
+    }
+    public function getListPackages(){
+        return View('admin.templates.list-packages');
+    }
+    public function getListOrders(){
+        return View('admin.templates.list-orders');
+    }
 }

@@ -13,81 +13,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-//    public function index()
-//    {
-//        $page = 0;
-//        $per_page = 30;
-//        $order = Order::where('id', '<>', null);
-////        if (isset($request->keyword)) {
-////            $post = Order::where('contents', 'like', '%' . $request->keyword . '%')->orWhere('topic', 'like', '%' . $request->keyword . '%');
-////        }
-//        if (isset($request->page)) {
-//            $page = $request->page;
-//        }
-//        if (isset($request->per_page)) {
-//            $per_page = $request->per_page;
-//        }
-//        if (isset($request->order)) {
-//            $per_page = $request->per_page;
-//        }
-//        return $order->limit($per_page)->offset($page * $per_page)->get();
-//    }
-//
-//
-//    public function create(Request $request)
-//    {
-//        return $request->all();
-//    }
-//
-//
-//    public function store(Request $request)
-//    {
-//        $type = new Order();
-//        $type->id = $request->id;
-//        $type->save();
-//        return Order::where('id', $type->id)->first();
-//    }
-//
-//
-//    public function show($id)
-//    {
-//        $order = Order::where('id', $id)->first();
-//        if (empty($order)) {
-//            return response(['status' => false, 'message' => 'Failed'], 400);
-//        }
-//        return $order;
-//    }
-//
-//
-//    public function edit($id)
-//    {
-//
-//    }
-//
-//
-//    public function update(Request $request, $id)
-//    {
-//        $type = Order::find($id);
-//        if (!empty($type)) {
-//            if (!empty($request->nick_name)) {
-//                $type->nick_name = $request->nick_name;
-//                $type->save();
-//                return Order::where('id', $id)->first();
-//            }
-//        }
-//        return response(['status' => false, 'message' => 'Failed'], 400);
-//    }
-//
-//    public function destroy($id)
-//    {
-//        $type = Order::where('id', $id)->first();
-//        if (empty($type)) {
-//            return response(['status' => false, 'message' => 'Failed'], 400);
-//        } else {
-//            $type->delete();
-//            return response(['status' => true, 'message' => 'Success'], 200);
-//        }
-//    }
+
     public function create(Request $request)
     {
         $order = new Order();
@@ -97,21 +23,34 @@ class OrderController extends Controller
 
     public function update(Request $request, $id)
     {
-        $order = new Order();
-        $order->updateOrder($id, $request->all());
-        return response()->json(['message' => 'Order updated successfully']);
+        $order = Order::find($id);
+        $order->nickname = $request->input('nickname');
+        $order->phone = $request->input('phone');
+        $order->packages_id = $request->input('packages_id');
+        $order->supporters_id = $request->input('supporter_id');
+        $order->id_app = $request->input('id_app');
+        $order->status = $request->input('status');
+        $order->save();
+        return response()->json([
+            'message' => 'Order updated successfully',
+            'order' => $order
+        ], 200);
+
+
     }
 
     public function delete($id)
     {
-        $order = new Order();
-        $order->deleteOrder($id);
+        Order::destroy($id);
         return response()->json(['message' => 'Order deleted successfully']);
     }
 
     public function loadList(Request $request)
     {
         $order = new Order();
+        if(isset($this->request->filters['fields'])){
+            $order = $order->select($this->request->filters['fields']);
+        };
         $page = $request->input('page', 1);
         $limit = $request->input('limit', 10);
         $offset = ($page - 1) * $limit;
