@@ -27,7 +27,8 @@ class OrderController extends Controller
         $order->nickname = $request->input('nickname');
         $order->phone = $request->input('phone');
         $order->packages_id = $request->input('packages_id');
-        $order->supporters_id = $request->input('supporter_id');
+        $order->foundations_id = $request->input('foundations_id');
+        $order->supporters_id = $request->input('supporters_id');
         $order->id_app = $request->input('id_app');
         $order->status = $request->input('status');
         $order->save();

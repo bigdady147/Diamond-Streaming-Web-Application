@@ -11,15 +11,15 @@ class FoundationController extends Controller
     //
     public function create(Request $request)
     {
-//        $foundation = new Foundation();
-//        $foundation->createFoundation($request->all());
+
         if ($request->has('avatar')) {
             $imageData = $request->input('avatar');
-            $imageData = str_replace('data:image/jpeg;base64,', '', $imageData);
-            $imageData = str_replace(' ', '+', $imageData);
-            $imageName = uniqid() . '.jpg';
-            $imagePath = public_path('foundations/' . $imageName);
+            list($type, $imageData) = explode(';', $imageData);
+            list(, $imageData) = explode(',', $imageData);
             $imageData = base64_decode($imageData);
+            $extension = explode('/', $type)[1];
+            $imageName = uniqid() . '.' . $extension;
+            $imagePath = public_path('foundations/' . $imageName);
             file_put_contents($imagePath, $imageData);
         } else {
             return response()->json(['message' => 'Error No Images Upload']);

@@ -218,7 +218,9 @@
                     save() {
                         let vm = this;
                         vm.item_edit.avatar = vm.fileData;
-                        vm.item_edit.status = 'active';
+                        if(vm.item_edit.status !== 'active'){
+                            vm.item_edit.status = 'pending';
+                        }
                         const headers = {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
                         };

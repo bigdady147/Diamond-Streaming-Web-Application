@@ -1,0 +1,50 @@
+.navbar-diamond {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0);
+    transition: all 0.3s ease;
+    @include for-size(991){
+        background: #062241;
+
+    }
+
+    .logo {
+        max-width: 70px;
+        display: block;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    .nav-item{
+        .nav-link{
+            color: #Fff !important;
+        }
+    }
+    .active {
+        .nav-link {
+
+            color: #09abef !important;
+        }
+    }
+    .navbar-toggler{
+        color: #09abef;
+        background: #09abef;
+        &:focus{
+            color: #09abef;
+            background: #09abef;
+        }
+    }
+}
+.sticky{
+    background: #062241;
+    border-bottom: 1px solid #fff;
+    @include for-size(991){
+        border-bottom: unset;
+    }
+}

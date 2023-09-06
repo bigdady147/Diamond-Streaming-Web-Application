@@ -7,6 +7,10 @@
         overflow: hidden;
         position: relative;
         min-height: 600px;
+        @include for-size(991){
+            padding-top: 160px;
+        }
+
 
         .banner-img {
             opacity: 0.2;
@@ -15,6 +19,9 @@
             top: 0;
             width: 100%;
             height: auto;
+            @include for-size(991){
+                display: none;
+            }
         }
 
         &-title {
@@ -43,7 +50,9 @@
                     padding: 16px;
                     transition: all 0.3s ease;
                     cursor: pointer;
-
+                    @include for-size(991){
+                        margin-top: 20px;
+                    }
                     &:hover {
                         background: #09aff4;
                     }
@@ -199,6 +208,9 @@
                         max-width: 100%;
                         margin: 0 auto;
                         border-radius: 6px;
+                        @include for-size(767){
+                            max-width: 60%;
+                        }
                     }
                 }
             }
@@ -277,5 +289,139 @@
         }
 
     }
+    .modal-dashboard{
+        .block-img{
+            max-width: 100%;
+            img{
+                display: block;
+                max-width: 100%;
+                margin: 0 auto;
+                border-radius: 4px;
+            }
+        }
+    }
+    .about-us{
+        padding: 40px 0px;
+    }
+    .math-group{
+        &-input{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            label{
+                color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                padding-left: 10px;
+            }
+        }
+        padding-top: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .math{
+        .form-send-request{
+            padding: 20px 20px 40px 20px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background: #062241;
+            margin-top: 30px;
+            .form-item{
+                display: flex;
+                flex-direction: column;
+                padding-top: 20px;
+                transition: all 0.3s ease;
+                label{
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding-bottom: 6px;
+                }
+                input{
+                    padding: 10px;
+                    border-radius: 6px;
+                    background: transparent;
+                    outline: none;
+                    border: 1px solid #ccc;
+                    color: #fff;
+                    &:focus{
+                        border-color: #09abef;
+                    }
+                }
+                select{
+                    padding: 10px;
+                    border-radius: 6px;
+                    background: transparent;
+                    outline: none;
+                    border: 1px solid #ccc;
+                    color: #fff;
+                    &:focus{
+                        border-color: #09abef;
+                    }
+                    option{
+                        color: #000;
+                    }
+                }
+
+            }
+            .send-request{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 20px;
+                .button-send-request{
+                    font-size: 14px;
+                    color: #fff;
+                    background: #09abef;
+                    border-radius: 6px;
+                    padding: 6px 32px;
+                    border: 2px solid #09abef;
+                    transition: all 0.3s ease;
+                    font-weight: 700;
+                    &:hover{
+                        border: 2px solid #fff;
+                        background: unset;
+                        box-shadow: 8px 8px 8px -5px #09abef;
+                    }
+                }
+            }
+            .form-input{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                label{
+                    font-size: 14px;
+                    color: #fff;
+                }
+                input{
+                    padding: 10px;
+                    border-radius: 6px;
+                    background: transparent;
+                    outline: none;
+                    border: 1px solid #ccc;
+                    color: #fff;
+                    width: 100%;
+                    &:focus{
+                        border-color: #09abef;
+                    }
+                }
+            }
+        }
+
+    }
 }
 
+footer{
+    background: #09aff4;
+    overflow: hidden;
+    span{
+        color: #fff;
+        font-size: 12px;
+        padding: 6px 0px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

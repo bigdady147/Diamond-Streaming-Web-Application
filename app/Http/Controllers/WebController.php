@@ -40,4 +40,10 @@ class WebController extends Controller
     public function getListOrders(){
         return View('admin.templates.list-orders');
     }
+    public function getListBankings(){
+        return View('admin.templates.list-bankings');
+    }
+    public function getAdminLogin(){
+        return View('admin.templates.login-form');
+    }
 }

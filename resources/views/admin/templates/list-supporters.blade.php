@@ -48,13 +48,15 @@
                     <td v-text="_.get(item,'updated_at','')"></td>
                     <td>
                         <div class="dropdown">
-                            <button v-text="_.get(item,'status','')" :class="item.active == 'active' ? 'btn-success' : 'btn-primary'" class="btn  dropdown-toggle text-admin"
+                            <button v-text="_.get(item,'status','')" :class="item.status == 'active' ? 'btn-success' : 'btn-primary'" class="btn  dropdown-toggle text-admin"
                                     type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
 
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item text-admin text-bolder" @click="activeItem(item)" href="#">Active</a>
+                                </li>
+                                <li><a class="dropdown-item text-admin text-bolder" @click="inactiveItem(item)" href="#">In Active</a>
                                 </li>
                                 <li><a class="dropdown-item text-admin text-bolder" @click="editItem(item)" href="#">Edit</a>
                                 </li>
@@ -111,6 +113,14 @@
                                         <input v-model="item_edit.email" id="email" type="text">
                                     </div>
                                 </div>
+                                <div class="col-lg-6">
+                                    <div class="form-input">
+                                        <label for="banking">Banking</label>
+                                        <select v-model="item_edit.banking_id" name="" id="">
+                                            <option v-for="(item,index) in list_banking.data" :value="item.id" v-text="_.get(item,'banking_name','') + ' - ' + _.get(item,'username','') + ' - ' + _.get(item,'account_number','') "></option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -149,6 +159,7 @@
                     fileData: '',
                     dateOfBirth: null,
                     list: [],
+                    list_banking: [],
                     is_add_new: false,
                     errors: [],
 
@@ -160,6 +171,7 @@
                 mounted() {
                     let vm = this;
                     vm.loadList();
+                    vm.loadListBanking();
                 },
                 methods: {
                     addNew() {
@@ -184,7 +196,22 @@
                             text = "canceled!";
                         }
                     },
-
+                    inactiveItem(data) {
+                        let vm = this;
+                        let text = "Press a button for active supporters!" + _.get(data, 'email', '') + " \nEither OK or Cancel.";
+                        vm.item_edit = _.cloneDeep(data);
+                        let status = 'active';
+                        if (confirm(text) == true) {
+                            text = "Active !";
+                            axios.put(`/api/supporters-inactive/${vm.item_edit.id}`).then(response => {
+                                vm.loadList();
+                            }).catch(e => {
+                                this.errors.push(e)
+                            })
+                        } else {
+                            text = "canceled!";
+                        }
+                    },
                     deleteItem(data) {
                         let vm = this;
                         let text = "Press a button for delete supporters!" + _.get(data, 'email', '') + " \nEither OK or Cancel.";
@@ -204,6 +231,7 @@
                         vm.is_add_new = false;
                         vm.modal_title = 'Edit';
                         vm.item_edit = _.cloneDeep(data);
+                        console.log('edit', vm.item_edit)
                         $('#modalAddNew').modal('show');
                     },
                     onFileChange(event) {
@@ -221,14 +249,16 @@
                     },
                     save() {
                         let vm = this;
-                        vm.item_edit.zalo_qr = vm.fileData;
-                        vm.item_edit.status = 'inactive';
+
+                        if(vm.item_edit.status !== 'active'){
+                            vm.item_edit.status = 'inactive';
+                        }
                         const headers = {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
                         };
                         if (vm.is_add_new) {
                             //Add new
-
+                            vm.item_edit.zalo_qr = vm.fileData;
                             axios.post(`/api/supporters`, vm.item_edit).then(response => {
                                 console.log('done', response);
                                 $('#modalAddNew').modal('hide');
@@ -239,7 +269,9 @@
                             })
                         } else {
                             //Edit
-
+                            if(vm.fileData){
+                                vm.item_edit.zalo_qr = vm.fileData;
+                            }
                             axios.put(`/api/supporters/${vm.item_edit.id}`, vm.item_edit).then(response => {
                                 console.log('done edit', response);
                                 $('#modalAddNew').modal('hide');
@@ -258,6 +290,18 @@
                         };
                         axios.get(`/api/supporters`).then(response => {
                             vm.list = response.data;
+
+                        }).catch(e => {
+                            // this.errors.push(e)
+                        })
+                    },
+                    loadListBanking() {
+                        let vm = this;
+                        const headers = {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                        };
+                        axios.get(`/api/banking`).then(response => {
+                            vm.list_banking = response.data;
 
                         }).catch(e => {
                             // this.errors.push(e)

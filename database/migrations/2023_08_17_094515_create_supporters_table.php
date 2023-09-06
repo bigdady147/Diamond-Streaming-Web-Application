@@ -19,6 +19,7 @@ class CreateSupportersTable extends Migration
             $table->string('phone')->default('');
             $table->timestamp('date_of_birth')->nullable()->default(null); // Thay đổi giá trị mặc định của trường date_of_birth
             $table->string('email')->default('');
+            $table->string('banking_id')->default('');
             $table->string('status')->default('inactive');
             $table->binary('zalo_qr')->default('');
             $table->timestamps();

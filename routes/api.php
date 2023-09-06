@@ -4,6 +4,7 @@ use App\Http\Controllers\API\FoundationController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\PackagesController;
 use App\Http\Controllers\API\SupporterController;
+use App\Http\Controllers\API\BankingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,8 @@ Route::get('orders', [OrderController::class, 'loadList']);
 //SUPPORTERS API
 Route::post('supporters', [SupporterController::class, 'create']);
 Route::put('supporters/{id}', [SupporterController::class, 'update']);
+Route::put('supporters-active/{id}', [SupporterController::class, 'activeItem']);
+Route::put('supporters-inactive/{id}', [SupporterController::class, 'inactiveItem']);
 Route::delete('supporters/{id}', [SupporterController::class, 'delete']);
 Route::get('supporters', [SupporterController::class, 'loadList']);
 
@@ -49,8 +52,8 @@ Route::get('packages', [PackagesController::class, 'loadList']);
 
 
 //PACKAGES API
-Route::post('packages1', [PackagesController::class, 'create']);
-Route::put('packages1/{id}', [PackagesController::class, 'update']);
-Route::delete('packages1/{id}', [PackagesController::class, 'delete']);
-Route::get('packages1', [PackagesController::class, 'loadList']);
+Route::post('banking', [BankingController::class, 'create']);
+Route::put('banking/{id}', [BankingController::class, 'update']);
+Route::delete('banking/{id}', [BankingController::class, 'delete']);
+Route::get('banking', [BankingController::class, 'loadList']);
 

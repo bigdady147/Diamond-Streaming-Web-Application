@@ -25,6 +25,7 @@
                     <th>ID App</th>
                     <th>Nickname</th>
                     <th>Phone</th>
+                    <th>Foundations</th>
                     <th>Packages name</th>
                     <th>Packages price</th>
                     <th>Diamond</th>
@@ -42,17 +43,18 @@
                     <td v-text="_.get(item,'id_app','')"></td>
                     <td v-text="_.get(item,'nickname','')"></td>
                     <td v-text="_.get(item,'phone','')"></td>
+                    <td v-text="_.get(item,'foundations.full_name','')"></td>
                     <td v-text="_.get(item,'packages.full_name','')"></td>
-                    <td v-text="_.get(item,'packages.price','') + ' VND'"></td>
-                    <td v-text="_.get(item,'packages.count','') + ' Diamond'"></td>
+                    <td v-text="formartVndCurrency(_.get(item,'packages.price',''))"></td>
+                    <td v-text="formartDiamondCurrency(_.get(item,'packages.count',''))"></td>
                     <td v-text="_.get(item,'supporters.full_name','') + '' "></td>
                     <td v-text="_.get(item,'supporters.phone','') + '' "></td>
                     <td v-text="_.get(item,'supporters.email','') + '' "></td>
-                    <td v-text="_.get(item,'created_at','')"></td>
-                    <td v-text="_.get(item,'updated_at','')"></td>
+                    <td v-text="formatDateString(_.get(item,'created_at',''))"></td>
+                    <td v-text="formatDateString(_.get(item,'updated_at',''))"></td>
                     <td>
                         <div class="dropdown">
-                            <button v-text="_.get(item,'status','')" :class="item.active == 'active' ? 'btn-success' : 'btn-primary'" class="btn  dropdown-toggle text-admin"
+                            <button  v-text="_.get(item,'status','')" :class="item.status == 'active' ? 'btn-success' : 'btn-primary'" class="btn  dropdown-toggle text-admin"
                                     type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                             </button>
@@ -164,6 +166,29 @@
                     vm.loadListFoundations();
                 },
                 methods: {
+                    formartVndCurrency(currency){
+                      let vm = this;
+                      return currency.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});
+                    },
+                    formartDiamondCurrency(currency){
+                        let vm = this;
+                        return currency.toLocaleString() + ' Diamond'
+                    },
+                    formatDateString(dateString) {
+                        // Tạo một đối tượng Date từ chuỗi đầu vào
+                        let date = new Date(dateString);
+                        // Lấy các giá trị ngày, tháng, năm, giờ, phút và giây
+                        let day = date.getDate();
+                        let month = date.getMonth() + 1;
+                        let year = date.getFullYear();
+                        let hours = date.getHours();
+                        let minutes = date.getMinutes();
+                        let seconds = date.getSeconds();
+                        // Định dạng lại chuỗi theo định dạng "hh:mm:ss dd/mm/yyyy"
+                        let formattedDate = `${hours}:${minutes}:${seconds} ${day}/${month}/${year}`;
+
+                        return formattedDate;
+                    },
                     addNew() {
                         let vm = this;
                         vm.is_add_new = true;
@@ -207,7 +232,9 @@
                     save() {
                         let vm = this;
                         vm.item_edit.avatar = vm.fileData;
-                        vm.item_edit.status = 'active';
+                        if(vm.item_edit.status !== 'active'){
+                            vm.item_edit.status = 'pending';
+                        }
                         const headers = {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute("content")
                         };

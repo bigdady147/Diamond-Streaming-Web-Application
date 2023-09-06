@@ -111,12 +111,17 @@ a{
 .big-title{
     font-size: 24px;
     font-weight: 700;
+    line-height: 30px;
     @include for-size(991){
         font-size: 20px;
         font-weight: 700;
+            line-height: 26px;
+
     }
     @include for-size(767){
         font-size: 16px;
         font-weight: 700;
+            line-height: 22px;
+
     }
 }

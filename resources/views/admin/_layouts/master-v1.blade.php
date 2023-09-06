@@ -26,15 +26,19 @@
 <body>
 
 @yield('menu')
-<div class="container-fluid">
+<div id="content-admin" class="container-fluid">
     <div class="row flex-nowrap">
         @includeIf('admin._partials.sidebar')
         <div class="col py-3">
-            <section class="content">
+            <section  class="content">
                 @yield('content')
             </section>
+
         </div>
     </div>
+</div>
+<div id="login">
+    @includeIf('admin.templates.login-form')
 </div>
 @yield('footer')
 <script src="{{ asset('js/app.js') }}"></script>
@@ -51,7 +55,19 @@
 <script src="https://unpkg.com/vue@2"></script>
 <script src="https://unpkg.com/jquery@3.1.1/dist/jquery.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
-
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let admin_data = '';
+        console.log('storage',localStorage.getItem('admin_login'))
+        if(localStorage.getItem('admin_login') == null){
+            let content = document.getElementById('content-admin');
+            content.style.display = 'none';
+        }else{
+            let login = document.getElementById('login');
+            login.style.display = 'none';
+        }
+    })
+</script>
 
 </body>
 

@@ -16,7 +16,7 @@ class PackagesController extends Controller
             'status' => $request->input('status'),
             'price' => $request->input('price'),
             'count' => $request->input('count'),
-            'foundation_id' => $request->input('foundation_id')
+            'foundation_id' => $request->input('foundation_id'),
         ]);
         $package->save();
 
@@ -54,13 +54,14 @@ class PackagesController extends Controller
     public function loadList(Request $request)
     {
         $package = new Packages();
-        if(isset($this->request->filters['fields'])){
-            $res = $package->select($this->request->filters['fields']);
-        }
+
         $page = $request->input('page', 1);
         $limit = $request->input('limit', 10);
         $offset = ($page - 1) * $limit;
-        $packages = $package->loadList($offset, $limit);
+        if ($request->has('filters')) {
+            $package = Packages::where('foundation_id', 'like', '%' . $request->filters . '%');
+        }
+        $packages = $package->limit($limit)->offset($offset)->with('foundation')->get();
         $total = $package->count();
         return response()->json([
             'data' => $packages,
@@ -72,4 +73,5 @@ class PackagesController extends Controller
             ]
         ]);
     }
+
 }

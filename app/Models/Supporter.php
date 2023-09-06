@@ -15,6 +15,7 @@ class Supporter extends Model
         'phone',
         'date_of_birth',
         'email',
+        'banking_id',
         'status',
         'zalo_qr',
     ];
@@ -39,5 +40,9 @@ class Supporter extends Model
     public function loadList()
     {
         return Supporter::all();
+    }
+    public function banking()
+    {
+        return $this->belongsTo(Banking::class);
     }
 }

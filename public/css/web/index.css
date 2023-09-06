@@ -93,17 +93,68 @@ a {
 .big-title {
   font-size: 24px;
   font-weight: 700;
+  line-height: 30px;
 }
 @media (max-width: 991px) {
   .big-title {
     font-size: 20px;
     font-weight: 700;
+    line-height: 26px;
   }
 }
 @media (max-width: 767px) {
   .big-title {
     font-size: 16px;
     font-weight: 700;
+    line-height: 22px;
+  }
+}
+
+.navbar-diamond {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0);
+  transition: all 0.3s ease;
+}
+@media (max-width: 991px) {
+  .navbar-diamond {
+    background: #062241;
+  }
+}
+.navbar-diamond .logo {
+  max-width: 70px;
+  display: block;
+}
+.navbar-diamond .nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.navbar-diamond .nav-item .nav-link {
+  color: #Fff !important;
+}
+.navbar-diamond .active .nav-link {
+  color: #09abef !important;
+}
+.navbar-diamond .navbar-toggler {
+  color: #09abef;
+  background: #09abef;
+}
+.navbar-diamond .navbar-toggler:focus {
+  color: #09abef;
+  background: #09abef;
+}
+
+.sticky {
+  background: #062241;
+  border-bottom: 1px solid #fff;
+}
+@media (max-width: 991px) {
+  .sticky {
+    border-bottom: unset;
   }
 }
 
@@ -131,6 +182,11 @@ a {
   position: relative;
   min-height: 600px;
 }
+@media (max-width: 991px) {
+  .diamond-dashboard .intro {
+    padding-top: 160px;
+  }
+}
 .diamond-dashboard .intro .banner-img {
   opacity: 0.2;
   position: absolute;
@@ -138,6 +194,11 @@ a {
   top: 0;
   width: 100%;
   height: auto;
+}
+@media (max-width: 991px) {
+  .diamond-dashboard .intro .banner-img {
+    display: none;
+  }
 }
 .diamond-dashboard .intro-title {
   position: relative;
@@ -157,6 +218,11 @@ a {
   padding: 16px;
   transition: all 0.3s ease;
   cursor: pointer;
+}
+@media (max-width: 991px) {
+  .diamond-dashboard .service-group .list-collapse .collabse-button {
+    margin-top: 20px;
+  }
 }
 .diamond-dashboard .service-group .list-collapse .collabse-button:hover {
   background: #09aff4;
@@ -289,6 +355,11 @@ a {
   margin: 0 auto;
   border-radius: 6px;
 }
+@media (max-width: 767px) {
+  .diamond-dashboard .support-group .support-item .qr-item img {
+    max-width: 60%;
+  }
+}
 .diamond-dashboard .support-group .support-item-nodata {
   background: unset;
 }
@@ -359,6 +430,135 @@ a {
   border: 2px solid #fff;
   background: unset;
   box-shadow: 8px 8px 8px -5px #09abef;
+}
+.diamond-dashboard .modal-dashboard .block-img {
+  max-width: 100%;
+}
+.diamond-dashboard .modal-dashboard .block-img img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+.diamond-dashboard .about-us {
+  padding: 40px 0px;
+}
+.diamond-dashboard .math-group {
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.diamond-dashboard .math-group-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.diamond-dashboard .math-group-input label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding-left: 10px;
+}
+.diamond-dashboard .math .form-send-request {
+  padding: 20px 20px 40px 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: #062241;
+  margin-top: 30px;
+}
+.diamond-dashboard .math .form-send-request .form-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  transition: all 0.3s ease;
+}
+.diamond-dashboard .math .form-send-request .form-item label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 6px;
+}
+.diamond-dashboard .math .form-send-request .form-item input {
+  padding: 10px;
+  border-radius: 6px;
+  background: transparent;
+  outline: none;
+  border: 1px solid #ccc;
+  color: #fff;
+}
+.diamond-dashboard .math .form-send-request .form-item input:focus {
+  border-color: #09abef;
+}
+.diamond-dashboard .math .form-send-request .form-item select {
+  padding: 10px;
+  border-radius: 6px;
+  background: transparent;
+  outline: none;
+  border: 1px solid #ccc;
+  color: #fff;
+}
+.diamond-dashboard .math .form-send-request .form-item select:focus {
+  border-color: #09abef;
+}
+.diamond-dashboard .math .form-send-request .form-item select option {
+  color: #000;
+}
+.diamond-dashboard .math .form-send-request .send-request {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.diamond-dashboard .math .form-send-request .send-request .button-send-request {
+  font-size: 14px;
+  color: #fff;
+  background: #09abef;
+  border-radius: 6px;
+  padding: 6px 32px;
+  border: 2px solid #09abef;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+.diamond-dashboard .math .form-send-request .send-request .button-send-request:hover {
+  border: 2px solid #fff;
+  background: unset;
+  box-shadow: 8px 8px 8px -5px #09abef;
+}
+.diamond-dashboard .math .form-send-request .form-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.diamond-dashboard .math .form-send-request .form-input label {
+  font-size: 14px;
+  color: #fff;
+}
+.diamond-dashboard .math .form-send-request .form-input input {
+  padding: 10px;
+  border-radius: 6px;
+  background: transparent;
+  outline: none;
+  border: 1px solid #ccc;
+  color: #fff;
+  width: 100%;
+}
+.diamond-dashboard .math .form-send-request .form-input input:focus {
+  border-color: #09abef;
+}
+
+footer {
+  background: #09aff4;
+  overflow: hidden;
+}
+footer span {
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 0px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .admin-dashboard .text-admin {
@@ -443,4 +643,92 @@ a {
 .admin-dashboard .modal .form-input input:focus {
   outline: none;
   border: 1px solid #ccc;
+}
+.admin-dashboard select {
+  font-size: 10px;
+  padding: 6px 0px;
+}
+.admin-dashboard select option {
+  font-size: 10px;
+  padding: 6px 0px;
+}
+
+.login .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.login .title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.login .card {
+  width: 300px;
+  background-color: #1e213a;
+  padding: 20px;
+  border-radius: 10px;
+  border-top: 4px solid #19d4ca;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.login input {
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
+  transition: box-shadow 0.3s;
+}
+.login input:focus {
+  box-shadow: 0 0 10px #19d4ca;
+}
+.login .buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.login .login-button,
+.login .register-link {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+  text-decoration: none;
+}
+.login .login-button {
+  background-color: transparent;
+  color: #19d4ca;
+}
+.login .login-button:hover {
+  background-color: #19d4ca;
+  color: #fff;
+  box-shadow: none;
+}
+.login .login-button:active {
+  box-shadow: 0 0 10px #19d4ca;
+}
+.login .register-link {
+  color: #ccc;
+  background-color: transparent;
+}
+.login .register-link:hover {
+  color: #fff;
+}
+.login .register-link:active {
+  box-shadow: 0 0 10px #ccc;
+}
+@media (max-width: 480px) {
+  .login .card {
+    width: 100%;
+    max-width: 300px;
+  }
 }
