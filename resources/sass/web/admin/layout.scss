@@ -1,13 +1,15 @@
 .navbar-diamond {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 2;
+    //position: fixed;
+    //top: 0px;
+    //left: 0px;
+    //right: 0px;
+    //z-index: 2;
     background: rgba(255, 255, 255, 0);
     transition: all 0.3s ease;
+    box-shadow: 1px 1px 1px 1px #fff;
+    transition: all 0.3s ease;
     @include for-size(991){
-        background: #062241;
+        background: #f6f9fe;
 
     }
 
@@ -18,33 +20,40 @@
 
     .nav-link {
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 500;
         transition: all 0.3s ease;
     }
     .nav-item{
         .nav-link{
-            color: #Fff !important;
+            color: #232323 !important;
         }
     }
     .active {
         .nav-link {
-
+            font-weight: 600;
             color: #09abef !important;
         }
     }
     .navbar-toggler{
-        color: #09abef;
-        background: #09abef;
+        color: #fff;
+        background: #f6f9fe;
         &:focus{
-            color: #09abef;
-            background: #09abef;
+            color: #fff;
+            background: #f6f9fe;
         }
     }
 }
 .sticky{
-    background: #062241;
-    border-bottom: 1px solid #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+    background: #f6f9fe;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    overflow: hidden;
     @include for-size(991){
         border-bottom: unset;
     }
+
 }

@@ -45,8 +45,8 @@
  {
      font-size: 14px;
  }
-body{
-    font-family: 'Montserrat', sans-serif !important;
+span, li, ul, div, a, p, h1, h2, h3{
+    font-family: 'Roboto', sans-serif !important;
 
 }
 a{
@@ -74,7 +74,10 @@ a{
     color: #fff;
 }
 .text-pri{
-    color: #09aff4;
+    color: #0C5ADB;
+}
+.text-black{
+    color: #1a202c;
 }
 .color-dark{
     color: #868b9f;

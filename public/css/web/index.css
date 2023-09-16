@@ -21,8 +21,8 @@ span, li, ul, div, a, p {
   font-size: 14px;
 }
 
-body {
-  font-family: "Montserrat", sans-serif !important;
+span, li, ul, div, a, p, h1, h2, h3 {
+  font-family: "Roboto", sans-serif !important;
 }
 
 a {
@@ -58,7 +58,11 @@ a {
 }
 
 .text-pri {
-  color: #09aff4;
+  color: #0C5ADB;
+}
+
+.text-black {
+  color: #1a202c;
 }
 
 .color-dark {
@@ -111,17 +115,14 @@ a {
 }
 
 .navbar-diamond {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 2;
   background: rgba(255, 255, 255, 0);
+  transition: all 0.3s ease;
+  box-shadow: 1px 1px 1px 1px #fff;
   transition: all 0.3s ease;
 }
 @media (max-width: 991px) {
   .navbar-diamond {
-    background: #062241;
+    background: #f6f9fe;
   }
 }
 .navbar-diamond .logo {
@@ -130,27 +131,34 @@ a {
 }
 .navbar-diamond .nav-link {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 .navbar-diamond .nav-item .nav-link {
-  color: #Fff !important;
+  color: #232323 !important;
 }
 .navbar-diamond .active .nav-link {
+  font-weight: 600;
   color: #09abef !important;
 }
 .navbar-diamond .navbar-toggler {
-  color: #09abef;
-  background: #09abef;
+  color: #fff;
+  background: #f6f9fe;
 }
 .navbar-diamond .navbar-toggler:focus {
-  color: #09abef;
-  background: #09abef;
+  color: #fff;
+  background: #f6f9fe;
 }
 
 .sticky {
-  background: #062241;
-  border-bottom: 1px solid #fff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+  background: #f6f9fe;
+  box-shadow: 1px 1px 1px 1px #ccc;
+  overflow: hidden;
 }
 @media (max-width: 991px) {
   .sticky {
@@ -180,7 +188,9 @@ a {
   background: #060922;
   overflow: hidden;
   position: relative;
-  min-height: 600px;
+  background: url("https://wp.ditsolution.net/techno/wp-content/uploads/2020/11/slide-image-6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 @media (max-width: 991px) {
   .diamond-dashboard .intro {
@@ -211,13 +221,14 @@ a {
   min-height: 200px;
   overflow: hidden;
   box-sizing: border-box;
+  background: #f6f9fe;
 }
 .diamond-dashboard .service-group .list-collapse .collabse-button {
-  background: #062241;
   border-radius: 4px;
   padding: 16px;
   transition: all 0.3s ease;
   cursor: pointer;
+  border: 2px solid #103d87;
 }
 @media (max-width: 991px) {
   .diamond-dashboard .service-group .list-collapse .collabse-button {
@@ -225,18 +236,19 @@ a {
   }
 }
 .diamond-dashboard .service-group .list-collapse .collabse-button:hover {
-  background: #09aff4;
+  box-shadow: 2px 2px 2px 2px #ccc;
 }
 .diamond-dashboard .service-group .list-collapse .collabse-button .icon i {
   font-size: 16px;
-  color: #09abef;
-}
-.diamond-dashboard .service-group .list-collapse .collabse-button:hover > .icon > i {
-  color: #fff;
+  color: #103d87;
+  padding: 10px;
+  border-radius: 4px;
+  background: #cecece;
 }
 .diamond-dashboard .service-group .list-collapse .data-collapse {
   margin-top: 20px;
-  background: #062241;
+  background: #fff;
+  border: unset;
   border-radius: 4px;
   padding: 16px;
   transition: all 0.3s ease;
@@ -250,6 +262,7 @@ a {
   box-sizing: border-box;
   padding: 40px 0px;
   min-height: 200px;
+  background: #f6f9fe;
 }
 .diamond-dashboard .infor-group .infor-item {
   display: flex;
@@ -259,9 +272,12 @@ a {
   padding-right: 10px;
 }
 .diamond-dashboard .guide {
-  padding: 40px 0px;
+  padding: 60px 0px 40px 0px;
   overflow: hidden;
   box-sizing: border-box;
+  background: url("https://psvfresher.com/images/bgPar.jpg?896595096e3cec9236608f80a2309936");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .diamond-dashboard .guide-group .mini-title {
   display: flex;
@@ -305,6 +321,7 @@ a {
   cursor: pointer;
   background: #062241;
   border-radius: 4px;
+  background: #Fff;
 }
 .diamond-dashboard .guide-group .step-guide .guide-step2-item .contact {
   display: flex;
@@ -328,17 +345,19 @@ a {
 }
 .diamond-dashboard .support {
   padding: 40px 0px;
+  background: #f6f9fe;
+  overflow: hidden;
 }
 .diamond-dashboard .support-group .support-item {
   padding: 16px;
   transition: all 0.3s ease;
   cursor: pointer;
-  background: #062241;
+  background: rgba(7, 41, 84, 0.8);
   border-radius: 6px;
 }
 .diamond-dashboard .support-group .support-item-title {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 4px;
   border-bottom: 2px solid #09abef;
@@ -365,13 +384,16 @@ a {
 }
 .diamond-dashboard .request {
   padding: 40px 0px;
+  background: #f6f9fe;
   overflow: hidden;
 }
 .diamond-dashboard .request .form-send-request {
   padding: 20px 20px 40px 20px;
   border-radius: 6px;
   transition: all 0.3s ease;
-  background: #062241;
+  background: #fff;
+  box-shadow: 1px 1px 1px 1px #ccc;
+  overflow: hidden;
 }
 .diamond-dashboard .request .form-send-request .form-item {
   display: flex;
@@ -380,7 +402,7 @@ a {
   transition: all 0.3s ease;
 }
 .diamond-dashboard .request .form-send-request .form-item label {
-  color: #fff;
+  color: #000000;
   font-size: 14px;
   font-weight: 600;
   padding-bottom: 6px;
@@ -391,7 +413,7 @@ a {
   background: transparent;
   outline: none;
   border: 1px solid #ccc;
-  color: #fff;
+  color: #000000;
 }
 .diamond-dashboard .request .form-send-request .form-item input:focus {
   border-color: #09abef;
@@ -402,13 +424,13 @@ a {
   background: transparent;
   outline: none;
   border: 1px solid #ccc;
-  color: #fff;
+  color: #000000;
 }
 .diamond-dashboard .request .form-send-request .form-item select:focus {
   border-color: #09abef;
 }
 .diamond-dashboard .request .form-send-request .form-item select option {
-  color: #000;
+  color: #000000;
 }
 .diamond-dashboard .request .form-send-request .send-request {
   display: flex;
@@ -419,17 +441,19 @@ a {
 .diamond-dashboard .request .form-send-request .send-request .button-send-request {
   font-size: 14px;
   color: #fff;
-  background: #09abef;
+  background: #0C5ADB;
   border-radius: 6px;
   padding: 6px 32px;
-  border: 2px solid #09abef;
+  border: 2px solid #0C5ADB;
   transition: all 0.3s ease;
   font-weight: 700;
+  cursor: pointer;
 }
 .diamond-dashboard .request .form-send-request .send-request .button-send-request:hover {
-  border: 2px solid #fff;
+  color: #0C5ADB;
+  border: 2px solid #0C5ADB;
   background: unset;
-  box-shadow: 8px 8px 8px -5px #09abef;
+  box-shadow: 6px 6px 6px -5px #0C5ADB;
 }
 .diamond-dashboard .modal-dashboard .block-img {
   max-width: 100%;
@@ -442,6 +466,7 @@ a {
 }
 .diamond-dashboard .about-us {
   padding: 40px 0px;
+  background: #f6f9fe;
 }
 .diamond-dashboard .math-group {
   padding-top: 20px;
@@ -455,16 +480,22 @@ a {
   align-items: center;
 }
 .diamond-dashboard .math-group-input label {
-  color: #fff;
+  color: #000000;
   font-size: 14px;
   font-weight: 600;
   padding-left: 10px;
+}
+.diamond-dashboard .math {
+  padding: 40px 0px;
+  background: #f6f9fe;
 }
 .diamond-dashboard .math .form-send-request {
   padding: 20px 20px 40px 20px;
   border-radius: 6px;
   transition: all 0.3s ease;
-  background: #062241;
+  background: #fff;
+  box-shadow: 1px 1px 1px 1px #Ccc;
+  overflow: hidden;
   margin-top: 30px;
 }
 .diamond-dashboard .math .form-send-request .form-item {
@@ -474,7 +505,7 @@ a {
   transition: all 0.3s ease;
 }
 .diamond-dashboard .math .form-send-request .form-item label {
-  color: #fff;
+  color: #000000;
   font-size: 14px;
   font-weight: 600;
   padding-bottom: 6px;
@@ -485,7 +516,7 @@ a {
   background: transparent;
   outline: none;
   border: 1px solid #ccc;
-  color: #fff;
+  color: #000000;
 }
 .diamond-dashboard .math .form-send-request .form-item input:focus {
   border-color: #09abef;
@@ -496,13 +527,13 @@ a {
   background: transparent;
   outline: none;
   border: 1px solid #ccc;
-  color: #fff;
+  color: #000000;
 }
 .diamond-dashboard .math .form-send-request .form-item select:focus {
   border-color: #09abef;
 }
 .diamond-dashboard .math .form-send-request .form-item select option {
-  color: #000;
+  color: #000000;
 }
 .diamond-dashboard .math .form-send-request .send-request {
   display: flex;
@@ -513,17 +544,18 @@ a {
 .diamond-dashboard .math .form-send-request .send-request .button-send-request {
   font-size: 14px;
   color: #fff;
-  background: #09abef;
+  background: #0C5ADB;
   border-radius: 6px;
   padding: 6px 32px;
-  border: 2px solid #09abef;
+  border: 2px solid #0C5ADB;
   transition: all 0.3s ease;
   font-weight: 700;
 }
 .diamond-dashboard .math .form-send-request .send-request .button-send-request:hover {
-  border: 2px solid #fff;
+  color: #0C5ADB;
+  border: 2px solid #0C5ADB;
   background: unset;
-  box-shadow: 8px 8px 8px -5px #09abef;
+  box-shadow: 6px 6px 6px -5px #0C5ADB;
 }
 .diamond-dashboard .math .form-send-request .form-input {
   display: flex;
@@ -532,7 +564,7 @@ a {
 }
 .diamond-dashboard .math .form-send-request .form-input label {
   font-size: 14px;
-  color: #fff;
+  color: #000000;
 }
 .diamond-dashboard .math .form-send-request .form-input input {
   padding: 10px;
@@ -540,15 +572,29 @@ a {
   background: transparent;
   outline: none;
   border: 1px solid #ccc;
-  color: #fff;
+  color: #000000;
   width: 100%;
 }
 .diamond-dashboard .math .form-send-request .form-input input:focus {
-  border-color: #09abef;
+  border-color: #0C5ADB;
+}
+
+.img-bct img {
+  display: block;
+  max-width: 100%;
+}
+
+.banner-diamond img {
+  height: 700px;
+}
+@media (max-width: 767px) {
+  .banner-diamond img {
+    height: unset;
+  }
 }
 
 footer {
-  background: #09aff4;
+  background: #0C5ADB;
   overflow: hidden;
 }
 footer span {

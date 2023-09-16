@@ -50,6 +50,10 @@
     <meta property="og:description" content="DailyKimCuong.com - Nơi cung cấp và mua bán kim cương chất lượng cao với giá cực tốt trên các nền tảng livestream Nimo, Bigo, Mico. Với chiết khấu cao, chúng tôi cam kết mang đến cho bạn trải nghiệm mua sắm trực tuyến đáng tin cậy và tiết kiệm nhất. Ghé thăm trang web của chúng tôi ngay để khám phá thêm!">
     <meta name="description" content="DailyKimCuong.com - Nơi cung cấp và mua bán kim cương chất lượng cao với giá cực tốt trên các nền tảng livestream Nimo, Bigo, Mico. Với chiết khấu cao, chúng tôi cam kết mang đến cho bạn trải nghiệm mua sắm trực tuyến đáng tin cậy và tiết kiệm nhất. Ghé thăm trang web của chúng tôi ngay để khám phá thêm!" />
     <meta property="og:image" content="{{ asset('images/contact/banner-popup.png') }}" />
+    <meta property="og:title" content="dailykimcuong.com - Nơi cung cấp kim cương cho các nền tảng livestream với chiết khấu cao, giá cực tốt">
+    <meta property="og:description" content="Nạp kim cương giá rẻ - DailyKimCuong.com - Nơi cung cấp và mua bán kim cương chất lượng cao với giá cực tốt trên các nền tảng livestream Nimo, Bigo, Mico. Với chiết khấu cao, chúng tôi cam kết mang đến cho bạn trải nghiệm mua sắm trực tuyến đáng tin cậy và tiết kiệm nhất.">
+    <meta name="description" content="Nạp kim cương giá rẻ - DailyKimCuong.com - Nơi cung cấp và mua bán kim cương chất lượng cao với giá cực tốt trên các nền tảng livestream Nimo, Bigo, Mico. Với chiết khấu cao, chúng tôi cam kết mang đến cho bạn trải nghiệm mua sắm trực tuyến đáng tin cậy và tiết kiệm nhất." />
+    <meta property="og:image" content="{{ asset('images/contact/banner-popup.jpg') }}" />
     <link rel="stylesheet" href="css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +69,7 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/web/index.css') }}">
     <link rel="shortcut icon" href="{{ asset('images/contact/logo-diamond.png') }}" type="images/x-icon">
-    <title>dailykimcuong.com</title>
+    <title>dailykimcuong.com - Cung cấp kim cương cho các nền tảng livestream</title>
 </head>
 <?php header('Access-Control-Allow-Origin: *'); ?>
 <body>

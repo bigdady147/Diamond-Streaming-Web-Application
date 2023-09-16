@@ -8,16 +8,16 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-md-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li :class="nav_active == 'intro' ? 'active' : '' " class="nav-item">
                     <a class="nav-link" aria-current="page" href="#intro">Giới thiệu</a>
                 </li>
-                <li :class="nav_active == 'service'  ? 'active'  : '' " class="nav-item">
-                    <a class="nav-link" href="#service">Dịch vụ</a>
+                <li :class="nav_active == 'math'  ? 'active' :  '' " class="nav-item">
+                    <a class="nav-link" href="#math">Chuyển đổi</a>
                 </li>
-                <li :class="nav_active == 'infor'  ? 'active' :  '' " class="nav-item">
-                    <a class="nav-link" href="#infor">Thông tin</a>
+                <li :class="nav_active == 'request'  ? 'active' :  '' " class="nav-item">
+                    <a class="nav-link" href="#request">Gửi yêu cầu</a>
                 </li>
                 <li :class="nav_active == 'guide'  ? 'active' :  '' " class="nav-item">
                     <a class="nav-link" href="#guide">Hướng dẫn</a>
@@ -25,11 +25,12 @@
                 <li :class="nav_active == 'support'  ? 'active' :  '' " class="nav-item">
                     <a class="nav-link" href="#support">Liên hệ và hỗ trợ</a>
                 </li>
-                <li :class="nav_active == 'math'  ? 'active' :  '' " class="nav-item">
-                    <a class="nav-link" href="#math">Chuyển đổi</a>
+                <li :class="nav_active == 'service'  ? 'active'  : '' " class="nav-item">
+                    <a class="nav-link" href="#service">Dịch vụ</a>
                 </li>
-                <li :class="nav_active == 'request'  ? 'active' :  '' " class="nav-item">
-                    <a class="nav-link" href="#request">Gửi yêu cầu</a>
+
+                <li :class="nav_active == 'infor'  ? 'active' :  '' " class="nav-item">
+                    <a class="nav-link" href="#infor">Thông tin</a>
                 </li>
                 <li :class="nav_active == 'about-us'  ? 'active' :  '' " class="nav-item">
                     <a class="nav-link" href="#about-us">Về chúng tôi</a>
